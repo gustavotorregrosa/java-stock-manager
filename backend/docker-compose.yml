@@ -1,0 +1,21 @@
+version: '3'
+services:
+
+    db:
+        image: mysql:5.7
+        container_name: mysql
+        ports:
+            - 3306:3306
+        restart: always
+        tty: true
+        environment:
+            MYSQL_ROOT_PASSWORD: gustavo
+            MYSQL_DATABASE: semexe
+            MYSQL_USER: gustavo
+            MYSQL_PASSWORD: gustavo
+        networks:
+            - app-network
+
+networks:
+    app-network:
+        driver: bridge
